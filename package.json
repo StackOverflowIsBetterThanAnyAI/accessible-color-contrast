@@ -12,9 +12,13 @@
     "scripts": {
         "start": "node index.js"
     },
+    "prettier": "prettier-es5",
     "dependencies": {
         "@clack/prompts": "^0.10.0",
         "@colors/colors": "^1.6.0",
         "cli-table3": "^0.6.5"
+    },
+    "devDependencies": {
+        "prettier-es5": "^0.0.4"
     }
 }
