@@ -4,11 +4,11 @@ import * as prompts from '@clack/prompts'
 import colors from '@colors/colors'
 
 import { calculateContrastRatio } from './lib/calculateContrastRatio.js'
-import { createTable } from './lib/createTable.js'
 import { convertHexToRgb } from './lib/convertHexToRgb.js'
+import { createTable } from './lib/createTable.js'
 import { displayOutro } from './lib/displayOutro.js'
-import { formatColor, isValidHex, isValidRGB } from './lib/utils.js'
 import { fillTable } from './lib/fillTable.js'
+import { formatColor, isValidHex, isValidRGB } from './lib/utils.js'
 
 const main = async (colorForeground, colorBackground) => {
     prompts.intro('Accessible Color Contrast')
