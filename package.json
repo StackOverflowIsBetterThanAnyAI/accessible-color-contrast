@@ -1,0 +1,20 @@
+{
+    "name": "accessible-color-contrast",
+    "version": "0.0.1",
+    "description": "Check your desired colors for a high enough contrast.",
+    "license": "MIT",
+    "author": "Michael Münzenhofer",
+    "type": "module",
+    "main": "index.js",
+    "bin": {
+        "accessible-color-contrast": "./index.js"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@clack/prompts": "^0.10.0",
+        "@colors/colors": "^1.6.0",
+        "cli-table3": "^0.6.5"
+    }
+}
