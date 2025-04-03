@@ -5,10 +5,16 @@ import colors from '@colors/colors'
 
 import { calculateContrastRatio } from './lib/calculateContrastRatio.js'
 import { convertHexToRgb } from './lib/convertHexToRgb.js'
+import { convertTailwindToHex } from './lib/convertTailwindToHex.js'
 import { createTable } from './lib/createTable.js'
 import { displayOutro } from './lib/displayOutro.js'
 import { fillTable } from './lib/fillTable.js'
-import { formatColor, isValidHex, isValidRGB } from './lib/utils.js'
+import {
+    formatColor,
+    isValidHex,
+    isValidRGB,
+    isValidTailwind,
+} from './lib/utils.js'
 
 const main = async (colorForeground, colorBackground) => {
     prompts.intro('Accessible Color Contrast')
@@ -16,7 +22,11 @@ const main = async (colorForeground, colorBackground) => {
     let foreground = colorForeground
     let background = colorBackground
 
-    while (!isValidRGB(foreground) && !isValidHex(foreground)) {
+    while (
+        !isValidRGB(foreground) &&
+        !isValidHex(foreground) &&
+        !isValidTailwind(foreground)
+    ) {
         foreground = await prompts.text({
             message: 'Enter an RGB or a Hex value of the foreground.',
         })
@@ -26,7 +36,11 @@ const main = async (colorForeground, colorBackground) => {
             process.exit(0)
         }
     }
-    while (!isValidRGB(background) && !isValidHex(background)) {
+    while (
+        !isValidRGB(background) &&
+        !isValidHex(background) &&
+        !isValidTailwind(background)
+    ) {
         background = await prompts.text({
             message: 'Enter an RGB or a Hex value of the background.',
         })
@@ -38,8 +52,16 @@ const main = async (colorForeground, colorBackground) => {
     }
 
     const contrastRatio = calculateContrastRatio(
-        isValidHex(foreground) ? convertHexToRgb(foreground) : foreground,
-        isValidHex(background) ? convertHexToRgb(background) : background
+        isValidHex(foreground)
+            ? convertHexToRgb(foreground)
+            : isValidRGB(foreground)
+            ? foreground
+            : convertHexToRgb(convertTailwindToHex(foreground)),
+        isValidHex(background)
+            ? convertHexToRgb(background)
+            : isValidRGB(background)
+            ? foreground
+            : convertHexToRgb(convertTailwindToHex(background))
     )
 
     const table = createTable()
