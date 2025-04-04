@@ -13,14 +13,20 @@ import {
     formatColor,
     isValidHex,
     isValidRGB,
+    isValidStartingParameter,
     isValidTailwind,
 } from './lib/utils.js'
 
-const main = async (colorForeground, colorBackground) => {
-    prompts.intro('Accessible Color Contrast')
+const main = async (props) => {
+    const args = props.slice(2)
+    const params = args.filter((item) => isValidStartingParameter(item))
+    let [foreground, background] = args.filter(
+        (item) => isValidRGB(item) || isValidHex(item) || isValidTailwind(item)
+    )
 
-    let foreground = colorForeground
-    let background = colorBackground
+    console.log(params)
+
+    prompts.intro('Accessible Color Contrast')
 
     while (
         !isValidRGB(foreground) &&
@@ -60,7 +66,7 @@ const main = async (colorForeground, colorBackground) => {
         isValidHex(background)
             ? convertHexToRgb(background)
             : isValidRGB(background)
-            ? foreground
+            ? background
             : convertHexToRgb(convertTailwindToHex(background))
     )
 
@@ -77,4 +83,4 @@ const main = async (colorForeground, colorBackground) => {
     prompts.outro(displayOutro(contrastRatio))
 }
 
-main(process.argv[2] || '', process.argv[3] || '').catch(console.error)
+main(process.argv).catch(console.error)
