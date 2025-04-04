@@ -24,8 +24,6 @@ const main = async (props) => {
         (item) => isValidRGB(item) || isValidHex(item) || isValidTailwind(item)
     )
 
-    console.log(params)
-
     prompts.intro('Accessible Color Contrast')
 
     while (
@@ -73,12 +71,20 @@ const main = async (props) => {
     const table = createTable()
     fillTable(table, contrastRatio)
 
-    prompts.note(
-        table.toString(),
-        `Color Contrast: ${formatColor(foreground)} - ${formatColor(
-            background
-        )} - ${colors.bold(`Ratio: ${contrastRatio}:1`)}`
-    )
+    if (params.some((item) => /(-s|--suppress)/i.test(item))) {
+        prompts.note(
+            `Color Contrast: ${formatColor(foreground)} - ${formatColor(
+                background
+            )} - ${colors.bold(`Ratio: ${contrastRatio}:1`)}`
+        )
+    } else {
+        prompts.note(
+            table.toString(),
+            `Color Contrast: ${formatColor(foreground)} - ${formatColor(
+                background
+            )} - ${colors.bold(`Ratio: ${contrastRatio}:1`)}`
+        )
+    }
 
     prompts.outro(displayOutro(contrastRatio))
 }
