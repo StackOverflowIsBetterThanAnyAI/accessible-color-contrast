@@ -1,7 +1,7 @@
 {
     "name": "accessible-color-contrast",
     "version": "0.0.1",
-    "description": "Check your desired colors for a high enough contrast.",
+    "description": "Check your desired colors for a high enough contrast in the context of WCAG 2.2",
     "license": "MIT",
     "author": "Michael Münzenhofer",
     "type": "module",
@@ -10,7 +10,8 @@
         "accessible-color-contrast": "./index.js"
     },
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
     },
     "prettier": "prettier-es5",
     "dependencies": {
@@ -19,6 +20,7 @@
         "cli-table3": "^0.6.5"
     },
     "devDependencies": {
+        "jest": "^29.7.0",
         "prettier-es5": "^0.0.4"
     }
 }
