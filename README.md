@@ -26,7 +26,9 @@ npx accessible-color-contrast [flags] [foreground] [background] [flags]
 
 ### Foreground and Background
 
-For the Foreground and Background colors, you are allowed to pass any valid RGB or Hex value. Additionally, you can also use any valid TailwindCSS color class name.
+For the Foreground and Background colors, you are allowed to pass any valid RGB or Hex value. Additionally, you can also use any valid **TailwindCSS** color class name.
+
+Do not forget to add quotation marks.
 
 ```
 "rgb(0,0,0)"
