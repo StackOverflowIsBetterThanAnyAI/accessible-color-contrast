@@ -14,6 +14,10 @@
         "cli",
         "tailwind"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/StackOverflowIsBetterThanAnyAI/accessible-color-contrast.git"
+    },
     "bin": {
         "accessible-color-contrast": "index.js"
     },
