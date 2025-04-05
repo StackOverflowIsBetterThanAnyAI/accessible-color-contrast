@@ -174,8 +174,8 @@ describe('Compare two values of the different color types', () => {
     })
 })
 
-describe('Return the correct WCAG 2.2 fullfilments', () => {
-    it('fullfils the whole AA and AAA requirements', () => {
+describe('Return the correct WCAG 2.2 fulfillments', () => {
+    it('fulfills the whole AA and AAA requirements', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 0, 0)', 'rgb(255, 255, 255)'],
