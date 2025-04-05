@@ -1,7 +1,7 @@
 {
     "name": "accessible-color-contrast",
     "version": "0.0.1",
-    "description": "Check your desired colors for a high enough contrast in the context of WCAG 2.2",
+    "description": "CLI tool which checks two colors for a high enough contrast in the context of WCAG 2.2",
     "license": "MIT",
     "author": "Michael Münzenhofer",
     "type": "module",
