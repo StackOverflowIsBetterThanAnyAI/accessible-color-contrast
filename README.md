@@ -28,20 +28,25 @@ npx accessible-color-contrast [flags] [foreground] [background] [flags]
 
 For the Foreground and Background colors, you are allowed to pass any valid RGB or Hex value. Additionally, you can also use any valid **TailwindCSS** color class name.
 
-Do not forget to add quotation marks.
+As long as the values are not torn apart, the CLI also reacts very gently to additional blanks within the values.
+
+Do not forget to add quotation marks if you provide the colors via the CLI call.
 
 ```
 "rgb(0,0,0)"
+"  rgb(  0,0 ,0 )  "
 "rgb(255, 255, 255)"
 
 "#000"
-"#ffffff"
+"   #ffffff "
 
 "zinc-50"
-"zinc-950"
+"zinc-950  "
 ```
 
 If you decide to pass no colors, miss one color, or provide a wrong format, the CLI will ask you for the specific color at runtime.
+
+At this point, you should not add any quotation marks to your values.
 
 Any amount of provided colors, which is larger than two, will be ignored.
 
