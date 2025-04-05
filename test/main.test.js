@@ -191,7 +191,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils the whole AA and AAA requirements', () => {
+    it('fulfills the whole AA and AAA requirements', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 97, 123)', 'rgb(255, 255, 255)'],
@@ -207,7 +207,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils the whole AA requirements, and meets AAA for large text', () => {
+    it('fulfills the whole AA requirements, and meets AAA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 97, 124)', 'rgb(255, 255, 255)'],
@@ -223,7 +223,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils the whole AA requirements, and meets AAA for large text', () => {
+    it('fulfills the whole AA requirements, and meets AAA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(117, 119, 119)', 'rgb(255, 255, 255)'],
@@ -239,7 +239,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils the the requirements for AA for large text', () => {
+    it('fulfills the the requirements for AA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(118, 119, 119)', 'rgb(255, 255, 255)'],
@@ -255,7 +255,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils the the requirements for AA for large text', () => {
+    it('fulfills the the requirements for AA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 153, 254)', 'rgb(255, 255, 255)'],
@@ -271,7 +271,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         )
     })
 
-    it('fullfils no requirements', () => {
+    it('fulfills no requirements', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 153, 255)', 'rgb(255, 255, 255)'],
@@ -285,7 +285,7 @@ describe('Return the correct WCAG 2.2 fulfillments', () => {
         expect(output).toContain('Your colors are not accessible at all.')
     })
 
-    it('fullfils no requirements', () => {
+    it('fulfills no requirements', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 0, 0)', 'rgb(0, 0, 0)'],
