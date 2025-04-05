@@ -74,7 +74,7 @@ describe('Return the expected values for edge cases', () => {
         )
     })
 
-    it('fulfills the the requirements for AA for large text', () => {
+    it('fulfills the requirements for AA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(118, 119, 119)', 'rgb(255, 255, 255)'],
@@ -93,7 +93,7 @@ describe('Return the expected values for edge cases', () => {
         )
     })
 
-    it('fulfills the the requirements for AA for large text', () => {
+    it('fulfills the requirements for AA for large text', () => {
         const result = spawnSync(
             'node',
             ['./index.js', 'rgb(0, 153, 254)', 'rgb(255, 255, 255)'],
