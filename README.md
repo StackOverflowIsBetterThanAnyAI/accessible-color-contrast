@@ -8,11 +8,15 @@ Accessible Color Contrast is a CLI tool which checks two colors for a high enoug
 
 ```
 npm i -g accessible-color-contrast
+
+...
+
+accessible-color-contrast [flags] [foreground] [background] [flags]
 ```
 
 ## Usage
 
-You can also use the CLI with npx:
+You can also use the CLI with npx, without downloading this package beforehand:
 
 ```
 npx accessible-color-contrast [flags] [foreground] [background] [flags]
