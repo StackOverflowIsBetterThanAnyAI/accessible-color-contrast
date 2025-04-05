@@ -79,8 +79,8 @@ npx accessible-color-contrast
 
 ### Tabular Output
 
-![Tabular Output](https://github.com/user-attachments/assets/faaecb0f-fbbd-4760-9ad7-889efb43cbbd)
+![Tabular Output](https://github.com/user-attachments/assets/6a26f7fb-fc43-4a90-98bd-b3c7d9128bcd)
 
 ### Non-Tabular Output
 
-![Non-Tabular Output](https://github.com/user-attachments/assets/3a6b6da2-c8b5-495d-ac10-7489d73662f9)
+![Non-Tabular Output](https://github.com/user-attachments/assets/a00efbf3-886e-44e6-9f15-9a137860b069)
