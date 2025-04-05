@@ -15,7 +15,7 @@
         "tailwind"
     ],
     "bin": {
-        "accessible-color-contrast": "./index.js"
+        "accessible-color-contrast": "index.js"
     },
     "scripts": {
         "start": "node index.js",
