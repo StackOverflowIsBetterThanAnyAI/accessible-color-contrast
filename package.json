@@ -6,6 +6,14 @@
     "author": "Michael Münzenhofer",
     "type": "module",
     "main": "index.js",
+    "keywords": [
+        "accessibility",
+        "accessible",
+        "wcag 2.2",
+        "color contrast",
+        "cli",
+        "tailwind"
+    ],
     "bin": {
         "accessible-color-contrast": "./index.js"
     },
