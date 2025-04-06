@@ -28,7 +28,7 @@ npx accessible-color-contrast [flags] [foreground] [background] [flags]
 
 For the Foreground and Background colors, you are allowed to pass any valid RGB or Hex value. Additionally, you can also use any valid **TailwindCSS** color class name.
 
-As long as the values are not torn apart, the CLI also reacts very gently to additional blanks within the values.
+As long as the values are not torn apart, the CLI also reacts very gently to additional spaces within the values.
 
 Do not forget to add quotation marks if you provide the colors via the CLI call.
 
