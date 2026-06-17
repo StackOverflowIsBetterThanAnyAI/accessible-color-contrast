@@ -32,6 +32,7 @@ export const main = async (props) => {
         foreground = await prompts.text({
             message: 'Enter an RGB or a Hex value of the foreground.',
         })
+        foreground = foreground.replace(/^['"`´]/g, '').replace(/['"`´]$/g, '')
 
         if (prompts.isCancel(foreground)) {
             prompts.cancel('Process cancelled.')
@@ -46,6 +47,7 @@ export const main = async (props) => {
         background = await prompts.text({
             message: 'Enter an RGB or a Hex value of the background.',
         })
+        background = background.replace(/^['"`´]/g, '').replace(/['"`´]$/g, '')
 
         if (prompts.isCancel(background)) {
             prompts.cancel('Process cancelled.')
@@ -57,13 +59,13 @@ export const main = async (props) => {
         isValidHex(foreground)
             ? convertHexToRgb(foreground)
             : isValidRGB(foreground)
-            ? foreground
-            : convertHexToRgb(convertTailwindToHex(foreground)),
+              ? foreground
+              : convertHexToRgb(convertTailwindToHex(foreground)),
         isValidHex(background)
             ? convertHexToRgb(background)
             : isValidRGB(background)
-            ? background
-            : convertHexToRgb(convertTailwindToHex(background))
+              ? background
+              : convertHexToRgb(convertTailwindToHex(background))
     )
 
     const table = createTable()
