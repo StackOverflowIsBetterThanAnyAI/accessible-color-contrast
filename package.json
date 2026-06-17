@@ -27,7 +27,7 @@
     },
     "prettier": "prettier-es5",
     "dependencies": {
-        "@clack/prompts": "^1.2.0",
+        "@clack/prompts": "^1.5.1",
         "@colors/colors": "^1.6.0",
         "cli-table3": "^0.6.5"
     },
