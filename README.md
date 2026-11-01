@@ -28,6 +28,11 @@ npx accessible-color-contrast [flags] [foreground] [background] [flags]
 
 For the Foreground and Background colors, you are allowed to pass any valid RGB or Hex value. Additionally, you can also use any valid **TailwindCSS** color class name.
 
+By default, the TailwindCSS colors are based on the default color palette of **TailwindCSS v4**, including `black`, `white` and the new colors `mauve`, `mist`, `olive` and `taupe`. If you still use **TailwindCSS v3**, add the `--tailwind-v3` flag, as many colors differ slightly between both versions. The CLI always shows the Hex value it used for a TailwindCSS color.
+
+> [!NOTE]
+> TailwindCSS v4 defines its colors in OKLCH, and some of them lie outside of the sRGB color space, which WCAG 2.2 is based on. These colors are converted to sRGB by clipping, which is what browsers display on sRGB screens.
+
 As long as the values are not torn apart, the CLI also reacts very gently to additional spaces within the values.
 
 Do not forget to add quotation marks if you provide the colors via the CLI call.
@@ -50,7 +55,7 @@ At this point, you should not add any quotation marks to your values.
 
 Any amount of provided colors, which is larger than two, will be ignored.
 
-### Flag
+### Flags
 
 As an optional flag, you can either use
 
@@ -66,6 +71,14 @@ or
 
 This suppresses the tabular output, and only logs the color contrast and the success criteria fulfillments.
 
+Additionally, you can use
+
+```
+--tailwind-v3
+```
+
+to use the default color palette of TailwindCSS v3 instead of v4.
+
 ## Examples
 
 ```
@@ -76,6 +89,8 @@ npx accessible-color-contrast "rgb(255, 255, 255)" "zinc-50" -s
 npx accessible-color-contrast "rgb(255, 255, 255)" "zinc-50" --suppress
 
 npx accessible-color-contrast "zinc-50" "zinc-950"
+
+npx accessible-color-contrast "red-500" "white" --tailwind-v3
 
 npx accessible-color-contrast -s
 
