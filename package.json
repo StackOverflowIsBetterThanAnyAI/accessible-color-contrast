@@ -1,6 +1,6 @@
 {
     "name": "accessible-color-contrast",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "description": "CLI tool which checks two colors for a high enough contrast in the context of WCAG 2.2",
     "license": "MIT",
     "author": "Michael Münzenhofer",
@@ -21,18 +21,33 @@
     "bin": {
         "accessible-color-contrast": "index.js"
     },
+    "files": [
+        "index.js",
+        "main.js",
+        "lib"
+    ],
+    "engines": {
+        "node": ">=20.12.0"
+    },
     "scripts": {
         "start": "node index.js",
         "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
     },
+    "jest": {
+        "testTimeout": 20000
+    },
     "prettier": "prettier-es5",
     "dependencies": {
-        "@clack/prompts": "^1.5.1",
+        "@clack/prompts": "^1.8.1",
         "@colors/colors": "^1.6.0",
         "cli-table3": "^0.6.5"
     },
     "devDependencies": {
-        "jest": "^29.7.0",
+        "jest": "^30.5.2",
         "prettier-es5": "^0.0.4"
+    },
+    "overrides": {
+        "glob": "^14.0.3",
+        "minimatch": "^11.0.3"
     }
 }
